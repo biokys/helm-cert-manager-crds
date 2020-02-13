@@ -13,6 +13,6 @@ jobs:
 
     - name: Install helm
       run: |
-          wget https://get.helm.sh/helm-v3.1.0-rc.3-linux-amd64.tar.gz
+          wget -nv https://get.helm.sh/helm-v3.0.0-linux-amd64.tar.gz
           tar -zxvf helm-v3.0.0-linux-amd64.tar.gz
           ls -alh
