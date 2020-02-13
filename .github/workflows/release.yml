@@ -17,6 +17,7 @@ jobs:
     - name: Package chart
       run: |
           mkdir -p /tmp/out
+          helm init -c
           helm package -d /tmp/out ./cert-manager-crds
           helm repo index /tmp/out
           ls -alh /tmp/out
