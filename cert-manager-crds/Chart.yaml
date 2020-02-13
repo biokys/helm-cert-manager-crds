@@ -1,6 +1,0 @@
-apiVersion: v2
-name: cert-manager-crds
-description: cert-manager CRDs
-type: application
-version: 0.1.0
-appVersion: 0.13
