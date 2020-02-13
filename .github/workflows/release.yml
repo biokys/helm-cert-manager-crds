@@ -14,22 +14,19 @@ jobs:
       with:
         persist-credentials: false
 
-    - name: Package chart
+    - name: Package and publish chart
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
           mkdir -p /tmp/out
           helm init -c
           helm package -d /tmp/out ./cert-manager-crds
-          helm repo index /tmp/out
-          ls -alh /tmp/out
 
-    - name: Publish
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: |
           git remote set-url origin "https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
           git fetch
           git checkout gh-pages
           cp /tmp/out/* .
+          helm repo index .
           git config user.name "Robot"
           git config user.email "robot@rocketeer.be"
           git add .
