@@ -1,1 +1,1 @@
-Automatically publish by CI
+Automatically published by CI
