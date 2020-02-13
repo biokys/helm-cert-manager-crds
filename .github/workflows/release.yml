@@ -16,13 +16,6 @@ jobs:
 
     - name: Install helm + package chart
       run: |
-          #wget -nv https://get.helm.sh/helm-v3.0.0-linux-amd64.tar.gz
-          #tar -zxvf helm-v3.0.0-linux-amd64.tar.gz
-          #echo $PATH
-          #mv linux-amd64/helm /tmp
-          helm version
-          rm -rf helm-*
-
           mkdir -p /tmp/out
           helm package -d /tmp/out ./cert-manager-rds
           helm repo index /tmp/out
