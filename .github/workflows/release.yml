@@ -26,6 +26,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
+          git fetch
           git checkout gh-pages
           cp /tmp/out/* .
           git config user.name "Robot"
