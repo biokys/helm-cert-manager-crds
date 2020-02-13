@@ -25,3 +25,7 @@ jobs:
           helm package -d /tmp/out ./cert-manager-rds
           helm repo index /tmp/out
           ls -alh /tmp/out
+
+    - name: Publish
+      run: |
+          git checkout gh-pages
