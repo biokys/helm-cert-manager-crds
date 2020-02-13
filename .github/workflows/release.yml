@@ -17,7 +17,7 @@ jobs:
     - name: Install helm + package chart
       run: |
           mkdir -p /tmp/out
-          helm package -d /tmp/out ./cert-manager-rds
+          helm package -d /tmp/out ./cert-manager-crds
           helm repo index /tmp/out
           ls -alh /tmp/out
 
