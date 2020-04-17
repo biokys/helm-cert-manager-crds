@@ -1,4 +1,4 @@
 name: cert-manager-crds
 description: cert-manager CRDs
-version: 0.1.0
-appVersion: 0.13
+version: {{VERSION}}
+appVersion: {{VERSION}}
