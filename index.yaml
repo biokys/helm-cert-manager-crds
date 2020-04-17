@@ -19,13 +19,4 @@ entries:
     urls:
     - cert-manager-crds-0.13.tgz
     version: "0.13"
-  - apiVersion: v1
-    appVersion: "0.13"
-    created: "2020-04-17T11:39:16.240774352Z"
-    description: cert-manager CRDs
-    digest: 3b2698c968ed6e7f4f42a34b7e75da059a730acec6aef9276e2dd461c5bf5bc1
-    name: cert-manager-crds
-    urls:
-    - cert-manager-crds-0.1.0.tgz
-    version: 0.1.0
 generated: "2020-04-17T11:39:16.229613477Z"
