@@ -24,7 +24,6 @@ jobs:
       run: |
           mkdir -p /tmp/out
           sed -i -e "s,{{VERSION}},$VERSION," cert-manager-crds/Chart.yaml
-          helm init -c
           helm package -d /tmp/out ./cert-manager-crds
           git checkout .
 
