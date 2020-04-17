@@ -1,5 +1,12 @@
 #!/bin/bash
 
-curl https://raw.githubusercontent.com/jetstack/cert-manager/master/deploy/manifests/00-crds.yaml > cert-manager-crds/templates/crds.yaml
+version="$1"
+if [ -z "$version" ]; then
+    echo "Usage: update.sh version"
+    exit 1
+fi
 
-echo "Done! Be sure to update the app version in the helm chart"
+curl "https://raw.githubusercontent.com/jetstack/cert-manager/release-$version/deploy/manifests/00-crds.yaml" > cert-manager-crds/templates/crds.yaml
+git tag "$version"
+
+echo "Done!"
